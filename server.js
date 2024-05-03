@@ -1,15 +1,15 @@
 import { fastify } from 'fastify'
-import { DataBaseMemory } from './database-memory.js'
+import { DataBasePostgress } from './database-postgres.js'
 
 const server = fastify();
-const dataBase = new DataBaseMemory()
+const dataBase = new DataBasePostgress()
 
 
 // POST > localhost:3333/products | add products
-server.post('/products', (request,reply) => {
+server.post('/products', async (request,reply) => {
     const {title,brand,category } = request.body
  
-    dataBase.create({
+    await dataBase.create({
         title,
         brand,
         category
@@ -19,18 +19,18 @@ server.post('/products', (request,reply) => {
 
 
 // POST > localhost:3333/products | add products
-server.get('/products', (request,reply) => {
+server.get('/products', async (request,reply) => {
     const search = request.query.search
-    const allVideos = dataBase.list(search)
+    const allVideos = await dataBase.list(search)
 
     return allVideos
 })
 
-server.put('/products/:id', (request,reply) => {
+server.put('/products/:id', async (request,reply) => {
     const videoId = request.params.id
     const {title,brand,category } = request.body
  
-    dataBase.update(videoId,{
+    await dataBase.update(videoId,{
         title,
         brand,
         category
@@ -38,9 +38,9 @@ server.put('/products/:id', (request,reply) => {
     return reply.status(204).send()
 })
 
-server.delete('/products/:id', (request,reply) => {
+server.delete('/products/:id', async (request,reply) => {
     const videoId = request.params.id
-    dataBase.delete(videoId)
+    await dataBase.delete(videoId)
     
     return reply.status(204).send()
 })

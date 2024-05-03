@@ -2,8 +2,8 @@ POST http://localhost:3333/products
 Content-Type: application/json
 
 {
-    "title"       : "Pneu de teste",
-    "brand"       : "Michelin",
+    "title"       : "Pneu de Carro",
+    "brand"       : "Pireli",
     "category"    : "car"
 }
 
@@ -12,15 +12,15 @@ Content-Type: application/json
 GET http://localhost:3333/products
 
 ###
-PUT http://localhost:3333/products/668bd136-74bf-426c-bbae-7b23ec065dfb
+PUT http://localhost:3333/products/634fe74f-bbe3-44dc-8a72-f1a42a8b4bd5
 Content-Type: application/json
 
 {
-    "title"       : "Pneu de teste",
+    "title"       : "Pneu de mudo de novo",
     "brand"       : "Pirreli",
     "category"    : "car"
 }
 
 ###
 
-DELETE http://localhost:3333/products/20c378a0-361e-4377-9404-79f765aa9b95
+DELETE http://localhost:3333/products/e0a61d36-8ad2-42a4-9c34-e463c21d5992
