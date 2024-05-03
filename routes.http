@@ -1,0 +1,26 @@
+POST http://localhost:3333/products
+Content-Type: application/json
+
+{
+    "title"       : "Pneu de teste",
+    "brand"       : "Michelin",
+    "category"    : "car"
+}
+
+###
+
+GET http://localhost:3333/products
+
+###
+PUT http://localhost:3333/products/668bd136-74bf-426c-bbae-7b23ec065dfb
+Content-Type: application/json
+
+{
+    "title"       : "Pneu de teste",
+    "brand"       : "Pirreli",
+    "category"    : "car"
+}
+
+###
+
+DELETE http://localhost:3333/products/20c378a0-361e-4377-9404-79f765aa9b95

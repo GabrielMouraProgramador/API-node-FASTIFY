@@ -1,0 +1,28 @@
+# Dependencias instaladas
+node_modules/
+
+# Archivos y carpetas generadas por varios editores y herramientas
+.vscode/
+.idea/
+.DS_Store
+npm-debug.log
+yarn-error.log
+.env
+
+# Archivos de compilación
+/build/
+/dist/
+
+# Otros archivos generados durante la ejecución del proyecto
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de caché y logs
+.cache/
+logs/
